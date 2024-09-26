@@ -80,6 +80,9 @@ func main() {
 	for sc.Scan() {
 		domain := strings.ToLower(sc.Text())
 
+		// Print the original domain regardless of the results
+		fmt.Println(domain)
+
 		// call each of the source workers in a goroutine
 		for _, source := range sources {
 			wg.Add(1)
